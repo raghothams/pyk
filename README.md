@@ -40,7 +40,9 @@ Standard library of commonly reused functions across all Pykih Projects.
 #### Pyk::Regex
 
 > Pyk::Regex::EMAIL
+
 > Pyk::Regex::PASSWORD
+
 > Pyk::Regex::URL
 
 ---------------------------------------
@@ -70,14 +72,17 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ###### Find all delayed jobs which have errored out
 > Pyk::Dj.bug
+
 > Pyk::Dj.bug_count
 
 ###### Find all delayed jobs which have not errored out
 > Pyk::Dj.ok
+
 > Pyk::Dj.ok_count
 
 ###### Find all delayed jobs which are running right now
 > Pyk::Dj.active
+
 > Pyk::Dj.active_count
 
 ###### Readable status
