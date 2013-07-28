@@ -3,25 +3,25 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ---------------------------------------
 
-## Pyk::User
+### Pyk::User
 
 ###### Check if admin by email ID 
 > Pyk::User.is_admin?(current_user.email)
 
 ---------------------------------------
 
-## Pyk::Url
+### Pyk::Url
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Pyk::String
+### Pyk::String
 
 ---------------------------------------
 
-## Pyk::Spreadsheet
+### Pyk::Spreadsheet
 
 ###### If date is coming from MS Excel then it needs processing.
 > Pyk::Spreadsheet.process_date_from_xls(d)
@@ -37,7 +37,7 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ---------------------------------------
 
-## Pyk::Regex
+### Pyk::Regex
 
 > Pyk::Regex::EMAIL
 > Pyk::Regex::PASSWORD
@@ -45,14 +45,14 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ---------------------------------------
 
-## Pyk::Number
+### Pyk::Number
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Pyk::Gravatar
+### Pyk::Gravatar
 
 ###### Image
 > Pyk::Gravatar.dp(email, size)
@@ -62,11 +62,11 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ---------------------------------------
 
-## Pyk::Float
+### Pyk::Float
 
 ---------------------------------------
 
-## Pyk::Dj (Delayed Job methods for investigation)
+### Pyk::Dj (Delayed Job methods for investigation)
 
 ###### Find all delayed jobs which have errored out
 > Pyk::Dj.bug
@@ -85,35 +85,35 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 ---------------------------------------
 
-## Pyk::DateTime
+### Pyk::DateTime
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Pyk::Date
+### Pyk::Date
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Pyk::Api
+### Pyk::Api
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Pyk::Address
+### Pyk::Address
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
 
 ---------------------------------------
 
-## Helpers
+### Helpers
 
 ###### Clean up URL
 > Pyk::Url.clean(link)
