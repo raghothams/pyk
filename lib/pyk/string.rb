@@ -1,0 +1,3 @@
+class Pyk::String
+    
+end

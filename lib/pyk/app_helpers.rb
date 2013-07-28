@@ -1,4 +1,4 @@
-module AppHelpers
+module Pyk::AppHelpers
   
   def title(page_title)
     content_for(:title) { page_title }

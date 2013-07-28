@@ -1,4 +1,4 @@
-module DeviseHelpers
+module Pyk::DeviseHelpers
   
   def resource_name
     :user

@@ -1,11 +1,23 @@
-module NumberHelpers
+module Pyk::NumberHelpers
   
-  def f(ff)
+  def two_decimal_points(ff)
     sprintf("%0.02f", ff)
   end
   
-  def remove_decimal(d)
-    d.to_s.gsub(".0", "")
+  def remove_decimal(str)
+    str = str.to_s
+    if str.index(".").present?
+      str = str[0..(str.index(".") - 1)]
+    end
+    str
+  end
+  
+  def n2h(d)
+    begin
+      return number_to_human(d, significant: false, precision: 1)
+    rescue
+      return d
+    end
   end
   
   def color_amount(d)

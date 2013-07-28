@@ -1,4 +1,4 @@
-module DateHelpers
+module Pyk::DateHelpers
   
   def smart_date(i, mode="date")
     if i.blank?

@@ -1,4 +1,4 @@
-module AddressHelpers
+module Pyk::AddressHelpers
   
   def location_summary(u)
     return Pyk::Address.to_s(u)

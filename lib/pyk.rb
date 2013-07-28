@@ -1,15 +1,5 @@
 class Pyk
   
-  def self._who_is(obj, cid)
-    if obj.id.blank?
-      obj.created_by = cid if obj.attributes.has_key?("created_by")
-      obj.updated_by = cid if obj.attributes.has_key?("updated_by")
-    else
-      obj.updated_by = cid if obj.attributes.has_key?("updated_by")
-    end
-    return obj
-  end
-  
 end
 
 require 'roo'
@@ -27,8 +17,12 @@ require 'pyk/string'
 require 'pyk/url'
 require 'pyk/user'
 
+require 'pyk/address_helpers'
+require 'pyk/app_helpers'
+require 'pyk/date_helpers'
+require 'pyk/devise_helpers'
+require 'pyk/number_helpers'
 
-ActionView::Base.send :include, Pyk::Helpers
 ActionView::Base.send :include, Pyk::AddressHelpers
 ActionView::Base.send :include, Pyk::AppHelpers
 ActionView::Base.send :include, Pyk::DateHelpers
