@@ -128,12 +128,33 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 #### Pyk::Address
 
-###### Clean up URL
-> Pyk::Url.clean(link)
-
 ---------------------------------------
 
 #### Helpers
 
+###### Convert 3.49505 to 3.49
+> two_decimal_points(ff)
+
+###### Convert 2.39405 to 2
+> remove_decimal(str)
+
+###### Number to human
+> n2h(d)
+
+###### If positive then show normal else show in red within brackets 
+> color_amount(d)
+
+###### Convert 3-15-2013 to 3-15 if 2013 is current year
+> smart_date(i, mode="date")
+
+###### Convert a date into Today, Yesterday, Tomorrow ...
+> smart_due_date(i)
+
+###### Push a custom title
+> title(page_title)
+
 ###### Clean up URL
-> Pyk::Url.clean(link)
+> d
+
+###### Display a refresh icon
+> r
