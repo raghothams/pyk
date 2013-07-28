@@ -92,22 +92,37 @@ Standard library of commonly reused functions across all Pykih Projects.
 
 #### Pyk::DateTime
 
-###### Clean up URL
-> Pyk::Url.clean(link)
+###### Convert a tag like last_30 into start date
+> Pyk::Date.get_start_date_from_tag(tag, default_year=nil, default_month=nil)
+
+###### Convert a tag like last_30 into end_date
+> Pyk::Date.get_end_date_from_tag(tag)
 
 ---------------------------------------
 
 #### Pyk::Date
 
-###### Clean up URL
-> Pyk::Url.clean(link)
+###### Convert 2013 into April 1, 2013
+> Pyk::Date.start_of_financial_year(d)
+
+###### Convert 2013 into March 31, 2014
+> Pyk::Date.end_of_financial_year(d)
+
+###### Convert May 2013 into 31 May 2013
+> Pyk::Date.end_of_month(month, year)
 
 ---------------------------------------
 
 #### Pyk::Api
 
-###### Clean up URL
-> Pyk::Url.clean(link)
+###### Basic Authentication HTTP Call
+> Pyk::Api.basic_auth(url, user_agent, username, password)
+
+###### HTTP Call without authentication
+> Pyk::Api.no_auth(url, user_agent)
+
+###### Convert response into JSON
+> Pyk::Api.json(nestful_response)
 
 ---------------------------------------
 
