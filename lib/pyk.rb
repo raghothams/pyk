@@ -16,6 +16,7 @@ require 'pyk/spreadsheet'
 require 'pyk/string'
 require 'pyk/url'
 require 'pyk/user'
+require 'pyk/highcharts'
 
 require 'pyk/address_helpers'
 require 'pyk/app_helpers'

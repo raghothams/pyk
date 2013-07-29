@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/pykih/pyk.png)](https://codeclimate.com/github/pykih/pyk)
+
 # Pyk
 Standard library of commonly reused functions across all Pykih Projects.
 
