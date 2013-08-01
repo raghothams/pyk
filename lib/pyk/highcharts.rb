@@ -69,4 +69,24 @@ class Pyk::Highcharts
     end
   end
   
+  # Pyk::Highcharts.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color)
+  def self.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color, show_in_legend=false, data_labels=false)
+    LazyHighCharts::HighChart.new('column') do |f|
+      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"column"} )
+      if pie_data.first.present?
+        pie_data.each do |pie|
+          f.series(:type=> 'pie',:name=> nil, :data=> [{:name=> pie[0], :y=> pie[1], :color=> pie[2]}], :center=> [pie[3], 5], :size=> 20, :showInLegend=> false, enableMouseTracking: false)
+        end
+      end
+      data.each do |d|
+        f.series(:type=> 'column',:name=> d[0],:data=> d[1], borderWidth: 0, stack: d[2], color: d[3])
+      end
+      f.xAxis({categories: categories, gridLineWidth: 0, :labels=>{:rotation=>0 , :align => 'right'}, type: :date})
+      f.legend({layout: "horizontal", :borderWidth => 0, enabled: show_in_legend})
+      f.yAxis({gridLineWidth: 0, title: nil, :min => 0})
+      f.title({ :text=> nil})
+      f.plot_options({:column=>{:stacking => "normal"}, dataLabels: {enabled: data_labels}, showInLegend: show_in_legend})
+    end
+  end
+  
 end
