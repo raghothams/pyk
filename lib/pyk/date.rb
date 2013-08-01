@@ -15,4 +15,14 @@ class Pyk::Date
     Date.new(year, month, -1).to_time + 86340
   end
   
+  #Pyk::Date.next_month(month)
+  def self.next_month(month)
+    (month == 12) ? 1 : month + 1
+  end
+  
+  #Pyk::Date.year_next_month(month, year)
+  def self.year_next_month(month, year)
+    (month == 12) ? year + 1 : year
+  end
+  
 end

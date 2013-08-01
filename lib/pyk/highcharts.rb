@@ -18,12 +18,12 @@ class Pyk::Highcharts
       data.each do |d|
         f.series(:name=>d[0],:data=> d[1], borderWidth: 0)
       end
-      f.xAxis({categories: categories, gridLineWidth: 0, :labels=>{:align => 'center'}, type: :string})
+      f.xAxis({categories: categories, gridLineWidth: 0, :labels=>{:align => 'right'}, type: :string})
       f.yAxis({gridLineWidth: 0, title: nil, :min => 0})
       f.title({ :text=> nil})
       f.plot_options({:bar=>{:stacking=>"normal", dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})
     end
-  end
+  end  
   
   # Pyk::Highcharts.column(data, categories, render_to_name, background_color)
   def self.column(data, categories, render_to_name, background_color, show_in_legend=false, data_labels=false)
@@ -45,16 +45,16 @@ class Pyk::Highcharts
     (start_date..end_date).each do |d|
       categories << d
     end
-    LazyHighCharts::HighChart.new('graph') do |f|
+    return LazyHighCharts::HighChart.new('graph') do |f|
       f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"areaspline"} )
-      data.each do |d|
-        f.series(:name=>d[0],:data=> d[1], borderWidth: 0)
+      data.each do |d2|
+        f.series(:name=>d2[0],:data=> d2[1], borderWidth: 0)
       end      
       f.xAxis({categories: categories, gridLineWidth: 0, :labels=>{:rotation=>-45 , :align => 'right'}, type: :datetime})
       f.legend({layout: "horizontal", :borderWidth => 0})
       f.yAxis({gridLineWidth: 0, title: nil, :min => 0})
       f.title({ :text=> nil})
-      f.plot_options({:area=>{:pointStart=>start_date, pointInterval: 1.day, marker: {enabled: false, symbol: 'circle',radius: 2,states: {hover: {enabled: true}}}, dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})
+      f.plot_options({:area=>{pointInterval: 1.day, marker: {enabled: false, symbol: 'circle',radius: 2,states: {hover: {enabled: true}}}, dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})
     end
   end
   

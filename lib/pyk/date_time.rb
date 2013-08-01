@@ -1,5 +1,10 @@
 class Pyk::DateTime
   
+  #Pyk::DateTime.end_of_day(date_object)
+  def self.end_of_day(date_object)
+    Date.new(date_object.year, date_object.month, date_object.day).to_time + 86340
+  end
+  
   #Pyk::Date.get_start_date_from_tag(tag, default_year=nil, default_month=nil)
   def self.get_start_date_from_tag(tag, default_year=nil, default_month=nil)
     if tag == "this_month"

@@ -1,6 +1,12 @@
 class Pyk
   
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
+  
 end
+
 
 require 'roo'
 require 'pyk/address'
