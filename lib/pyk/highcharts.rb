@@ -39,6 +39,17 @@ class Pyk::Highcharts
     end
   end
   
+  # Pyk::Highcharts.donut(data, series_name, render_to_name, background_color)
+  def self.donut(data, series_name, render_to_name, background_color, chart_title, show_in_legend=false, data_labels=false)
+    LazyHighCharts::HighChart.new('pie') do |f|
+      f.chart({:defaultSeriesType=>"pie" , :margin=> [0, 0, 0, 0], backgroundColor: background_color, renderTo: render_to_name})
+      f.title({verticalAlign: 'middle',floating: true,text: chart_title})
+      f.series({:type=> 'pie', :name=> series_name, :data=> data, borderWidth: 0, innerSize: '67%', size: '100%'})
+      f.legend(:layout=> 'vertical',:style=> {:left=> '0', :bottom=> '0',:right=> '0',:top=> '0'}) 
+      f.plot_options(series: {pointPadding: 0,groupPadding: 0}, :pie=>{:allowPointSelect=>true, :cursor=>"pointer" , showInLegend: show_in_legend, :dataLabels=>{:enabled=>data_labels}})
+    end
+  end  
+  
   # Pyk::Highcharts.areaspline_by_date(data, render_to_name, background_color, start_date, end_date)
   def self.areaspline_by_date(data, render_to_name, background_color, start_date, end_date, show_in_legend=false, data_labels=false)
     categories = []

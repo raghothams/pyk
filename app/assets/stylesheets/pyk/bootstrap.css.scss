@@ -1,13 +1,10 @@
+
+/* BOOTSTRAP CUSTOMIZATIONS */
+
 ul.nav.nav-tabs.nav-stacked{
 a{border-left: #f4f4f4 solid 6px; padding: 6px; }
 a:hover{border-left: #08C solid 6px; background-color: #f4f4f4; }
 li.active{a{border-left: #08C solid 6px; background-color: #f4f4f4; color: #08C;}}}
-
-.h{
-    padding-top: 20px;
-	margin-bottom: 0px;
-	h2, h3{font-weight: 800; padding: 0px 0px 10px 0px; color: #2986C4; font-size: 33px; letter-spacing: -2px; text-shadow: #F7F7F7 2px 2px; }
-}
 
 ul.nav.nav-pills{
   li.active{ 
