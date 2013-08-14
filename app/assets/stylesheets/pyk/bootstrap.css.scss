@@ -1,10 +1,6 @@
 
 /* BOOTSTRAP CUSTOMIZATIONS */
 
-ul.nav.nav-tabs.nav-stacked{
-a{border-left: #f4f4f4 solid 6px; padding: 6px; }
-a:hover{border-left: #08C solid 6px; background-color: #f4f4f4; }
-li.active{a{border-left: #08C solid 6px; background-color: #f4f4f4; color: #08C;}}}
 
 ul.nav.nav-pills{
   li.active{ 
@@ -20,7 +16,7 @@ ul.nav.nav-pills{
 .alert.alert-success{background-color: #FCFDDD; border: 1px solid #BDBDBD; color: #2E2E2E;}
 .well{background-color: #EFEFEF;border: none; }
 ul.breadcrumb{border: none; background: none; margin: 0px; padding: 0xp; a{color: gray;} color: lightgray; li{padding: 0px 6px 0px 0px;}}
-ul.nav.nav-tabs{background-color: lightgray; }
+
 .help-block{font-size: 11px; color: #A4967D;}
 .simple_form_search_bar{background-color: white; border: 1px lightgray solid;}
 
