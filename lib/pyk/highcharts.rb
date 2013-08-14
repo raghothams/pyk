@@ -69,6 +69,16 @@ class Pyk::Highcharts
     end
   end
   
+  # Pyk::Highcharts.funnel(data, series_name, render_to_name, background_color, show_in_legend=false, data_labels=false, text_color="black", neck_width="30%", neck_height="25%")
+  def self.funnel(data, series_name, render_to_name, background_color, show_in_legend=false, data_labels=false, text_color="black", neck_width="30%", neck_height="25%")
+    LazyHighCharts::HighChart.new('graph') do |f|
+      f.chart({type: "funnel" , margin: [0, 0, 0, 0], backgroundColor: background_color, renderTo: render_to_name})
+      f.series({name: series_name, data: data})
+      f.options[:title][:text] = nil
+      f.plotOptions(series: {:dataLabels=>{:enabled=>data_labels, format: '<b>{point.name}</b> ({point.y:,.0f})', color: text_color, softConnector: true}, neckWidth: neck_width, neckHeight: neck_height})
+    end
+  end
+    
   # Pyk::Highcharts.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color)
   def self.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color, show_in_legend=false, data_labels=false)
     LazyHighCharts::HighChart.new('column') do |f|
