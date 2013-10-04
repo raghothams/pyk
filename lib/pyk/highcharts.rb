@@ -26,16 +26,43 @@ class Pyk::Highcharts
   end  
   
   # Pyk::Highcharts.column(data, categories, render_to_name, background_color)
-  def self.column(data, categories, render_to_name, background_color, show_in_legend=false, data_labels=false)
+  def self.column(data, categories, render_to_name, background_color, show_in_legend=false, data_labels=false, height=nil, stacking="normal")
     LazyHighCharts::HighChart.new('column') do |f|
-      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"column"} )
+      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"column", height: height} )
       data.each do |d|
-        f.series(:name=>d[0],:data=> d[1], borderWidth: 0)
+        f.series(:name=>d[0],:data=> d[1], borderWidth: 0, color: d[2])
       end
       f.xAxis({categories: categories, gridLineWidth: 0, :labels=>{:align => 'center'}, type: :string})
       f.yAxis({gridLineWidth: 0, title: nil, :min => 0})
       f.title({ :text=> nil})
-      f.plot_options({:column=>{:stacking=>"normal", dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})     
+      f.plot_options({:column=>{:stacking=>stacking, dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})     
+    end
+  end
+  
+  # Pyk::Highcharts.column
+  def self.area(data, categories, render_to_name, background_color, show_in_legend=false, data_labels=false, height=nil, stacking="normal")
+    LazyHighCharts::HighChart.new('area') do |f|
+      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"area", height: height} )
+      data.each do |d|
+        f.series(:name=>d[0],:data=> d[1], borderWidth: 0, color: d[2])
+      end
+      f.xAxis({categories: categories, tickmarkPlacement: 'on', title: { enabled: false }, :labels=>{:align => 'center'}, type: :string})
+      f.yAxis({gridLineWidth: 0, title: nil, :min => 0})
+      f.title({ :text=> nil})
+      f.plot_options({:area=>{:stacking=>stacking, lineColor: '#666666', lineWidth: 1, dataLabels: {enabled: data_labels}, showInLegend: show_in_legend}})     
+    end
+  end
+  
+  def self.line(data, categories, render_to_name, background_color, show_in_legend=false, data_labels=false, height=nil)
+    LazyHighCharts::HighChart.new('graph') do |f|
+      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"line", height: height} )
+      data.each do |d|
+        f.series(:name=>d[0],:data=> d[1], color: d[2])
+      end
+      f.xAxis({categories: categories, title: { enabled: false }, :labels=>{:align => 'center'}, type: :string})
+      f.yAxis({title: nil, plotLines: [{value: 0, width: 1, color: '#F7F7F7'}]})
+      f.title({ :text=> nil})
+      f.legend({ :enabled=> show_in_legend})
     end
   end
   
@@ -80,9 +107,9 @@ class Pyk::Highcharts
   end
     
   # Pyk::Highcharts.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color)
-  def self.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color, show_in_legend=false, data_labels=false)
+  def self.stacked_bar_with_pie(data, categories, pie_data, render_to_name, background_color, show_in_legend=false, data_labels=false, height=nil)
     LazyHighCharts::HighChart.new('column') do |f|
-      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"column"} )
+      f.chart({ backgroundColor: background_color, renderTo: render_to_name, :defaultSeriesType=>"column", height: height} )
       if pie_data.first.present?
         pie_data.each do |pie|
           f.series(:type=> 'pie',:name=> nil, :data=> [{:name=> pie[0], :y=> pie[1], :color=> pie[2]}], :center=> [pie[3], 5], :size=> 20, :showInLegend=> false, enableMouseTracking: false)

@@ -1,3 +1,0 @@
-class Pyk::Number
-    
-end

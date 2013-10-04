@@ -1,3 +1,0 @@
-class Pyk::Float
-  
-end
