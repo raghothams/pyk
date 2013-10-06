@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'pyk'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.date        = '2013-07-28'
   s.summary     = "Standard library of commonly reused functions across all Pykih Projects."
   s.description = "Standard library of commonly reused functions across all Pykih Projects."
