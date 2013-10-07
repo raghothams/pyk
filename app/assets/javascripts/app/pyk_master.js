@@ -1,7 +1,4 @@
 $(document).ready(function(){
-		$("#tooltip-below").tooltip({
-		"placement": "bottom"
-	    });
 
 		//textarea increase / decrease
 		$(".text_area_animate").focus(function() {
