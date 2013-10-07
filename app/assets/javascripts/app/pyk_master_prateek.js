@@ -1,8 +1,4 @@
 $(document).ready(function(){
-    //tooltip
-    $("#title-help").tooltip({
-	"placement": "left"
-    });
 
     // scroll to top
     $("#scroll-topper").hide();
