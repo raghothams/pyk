@@ -1,10 +1,15 @@
-/*! gridster.js - v0.1.0 - 2013-06-14
+/*! gridster.js - v0.1.0 - 2012-10-20
 * http://gridster.net/
-* Copyright (c) 2013 ducksboard; Licensed MIT */
+* Copyright (c) 2012 ducksboard; Licensed MIT */
 
 .gridster {
     position:relative;
 }
+
+.gridster ul{list-style: none; height: auto;}
+
+.gridster ul li{border: 1px #F0F0F0 solid;}
+.gridster ul li:hover{background: #F0F0F0;}
 
 .gridster > * {
     margin: 0 auto;
