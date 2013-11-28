@@ -9,7 +9,7 @@
 .gridster ul{list-style: none; height: auto;}
 
 .gridster ul li{border: 1px #F0F0F0 solid;}
-.gridster ul li:hover{background: #F0F0F0;}
+.gridster ul li:hover{background: #8FC3FF;}
 
 .gridster > * {
     margin: 0 auto;
