@@ -1,3 +1,0 @@
-gem build pyk.gemspec
-gem push pyk-0.2.6.gem
-gem install --local '/Users/ritvvijparrikh/Projects/pyk/pyk-0.2.5.gem'
